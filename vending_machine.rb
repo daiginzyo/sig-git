@@ -1,6 +1,4 @@
 class VendingMachine
-
-	# 使えるお金
 	
 	def initialize
 		@available_money = [10, 50, 100, 500, 1000]
@@ -46,7 +44,7 @@ class VendingMachine
 
 	def purchasable_list
 		@drink.each{|name, price|
-			puts name if @total >= price
+			puts name if @total >= price && @drink_stock[name] > 0
 		}
 	end
 
